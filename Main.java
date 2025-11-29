@@ -13,6 +13,7 @@ public class Main{
     private static int func(String name , int age){
         // System.out.println("My name is : " + name + " and my age is : " + age);
         // System.out.println(age);
+        System.out.println(name);
         return age;
     }
 }

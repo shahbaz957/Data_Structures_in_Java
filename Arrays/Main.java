@@ -14,6 +14,21 @@ public class Main {
 
 		deletion.delete();
 		My_list.list();
+        MyArray arr1 = new MyArray(5);
+        arr1.insert(6);
+        arr1.insert(7);
+        arr1.insert(2);
+        arr1.insert(9);
+        arr1.insert(12);
+        arr1.insert(13);
+        arr1.insert(17); 
+        // System.out.println(arr.index(12));
+        // arr.remove(6);
+        // arr.reverse();
+        arr1    .print();
+
+
+        
 
 
     }
