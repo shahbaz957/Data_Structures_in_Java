@@ -18,7 +18,7 @@ class Node {
 public class MyLinkedList {
 
     private Node head;
-    private Node tail ;
+    private Node tail;
 
     public MyLinkedList() {
         head = null;
@@ -30,7 +30,7 @@ public class MyLinkedList {
         Node n = new Node(value);
         if (head == null) {
             head = n;
-            tail = n ; 
+            tail = n;
             return;
         }
 
@@ -40,10 +40,9 @@ public class MyLinkedList {
         // }
         // temp.next = n;
         // tail = temp.next;
+        tail.next = n; // previously tail.next was null 
 
-        tail.next = n ; // previously tail.next was null 
-
-        tail = n ;  // Now we have moved the pointer tail to the last node 
+        tail = n;  // Now we have moved the pointer tail to the last node 
     }
 
     public void show() {
@@ -53,36 +52,16 @@ public class MyLinkedList {
         }
     }
 
-    public String toString() {
-        StringBuilder nodeString = new StringBuilder();
-        Node traversingNode = head; // > Traversing from start
-        while (traversingNode != null) {
-            nodeString.append("|").append(traversingNode.data + ", ");
-            if (traversingNode.next != null) {
-                nodeString.append(traversingNode).append("|");
-                nodeString.append("-->");
-            } else {
-                nodeString.append("null").append("| --> null");
-            }
-
-            traversingNode = traversingNode.next;
-
-        }
-
-        return nodeString.toString();
-
-    }
-
     public void deleteLastNode() {
-        if (head == null){
+        if (head == null) {
             System.out.println("No Node to Delete");
-            return ;
+            return;
         }
 
-        if (head == tail){ // Only have one Node        
+        if (head == tail) { // Only have one Node        
             head = null;
             tail = null;
-            return ;
+            return;
         }
 
         // Node temp = head;
@@ -91,14 +70,45 @@ public class MyLinkedList {
         // }
         // temp.next = null;
         // tail = temp.next;
-
         Node temp = head;
-        while (temp.next != tail){
-            temp = temp.next ;
+        while (temp.next != tail) {
+            temp = temp.next;
         }
-        tail = temp ;
-        tail.next = null ;
+        tail = temp;
+        tail.next = null;
         // In case of Tails we just have to Focus on TAILS and keep track of tails
     }
 
+    public int sumList() {
+        int sum = 0;
+        Node temp = head;
+        while (temp.next != null) {
+
+            sum += temp.data;
+            temp = temp.next;
+        }
+        sum += temp.data;
+        return sum;
+    }
+
+    public void insertAtBeg(int value) {
+        head = new Node(value, head);
+    }
+
+    public void insertAtidx(int value, int idx) {
+        Node n = new Node(value);
+        if (idx == 0) {
+            insertAtBeg(value);
+            return;
+        }
+        int i = 1;
+        Node temp = head;
+        while (i != idx && temp.next != null) {
+            i++;
+            temp = temp.next;
+        }
+        n.next = temp.next;
+        temp.next = n;
+
+    }
 }
