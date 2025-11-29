@@ -97,18 +97,56 @@ public class MyLinkedList {
 
     public void insertAtidx(int value, int idx) {
         Node n = new Node(value);
-        if (idx == 0) {
-            insertAtBeg(value);
-            return;
-        }
-        int i = 1;
-        Node temp = head;
-        while (i != idx && temp.next != null) {
-            i++;
-            temp = temp.next;
-        }
-        n.next = temp.next;
-        temp.next = n;
+        // if (idx == 0) {
+        //     insertAtBeg(value);
+        //     return;
+        // }
+        // int i = 1;
+        // Node temp = head;
+        // while (i != idx && temp.next != null) {
+        //     i++;
+        //     temp = temp.next;
+        // }
+        // n.next = temp.next;
+        // temp.next = n;
 
+        // ***************************** Another Way *******************************
+
+        if (head == null){
+            System.out.println("Linked List is Empty !!!");
+        }
+        // Node n = new Node(value);
+        Node prev = null;
+        Node cur = head;
+        while (idx > 0 && cur != null){
+            prev = cur;
+            cur = cur.next;
+            idx--;
+        }
+
+        prev.next = n ;
+        n.next = cur;
+
+
+    }
+
+    public void reverseLL(){
+        Node prev = null;
+        Node next = null;
+        Node curr = head;
+        while (curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        head = prev;
+    }
+
+    public void DeleteAtBeg(){
+        Node temp = head.next; 
+        // previous head is automatically removed by java garbage Collector which you have to do manually in C++
+        head = temp;
     }
 }

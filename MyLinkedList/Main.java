@@ -12,6 +12,13 @@ public class Main {
         // System.out.println(ll.toString());
         // ll.deleteLastNode();
         ll.insertAtidx(123, 2);
+        // System.out.println("Before Reversing");
+        // ll.show();
+        // ll.reverseLL();
+        // System.out.println("After Reversing");
+        // ll.show();
+
+        ll.DeleteAtBeg(); 
         ll.show();
 
         // System.err.println(ll.sumList());
