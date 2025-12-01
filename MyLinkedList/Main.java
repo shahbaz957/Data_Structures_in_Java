@@ -11,15 +11,19 @@ public class Main {
         // ll.insertAtBeg(234);
         // System.out.println(ll.toString());
         // ll.deleteLastNode();
-        ll.insertAtidx(123, 2);
+        // ll.insertAtidx(123, 2);
         // System.out.println("Before Reversing");
         // ll.show();
         // ll.reverseLL();
         // System.out.println("After Reversing");
         // ll.show();
 
-        ll.DeleteAtBeg(); 
-        ll.show();
+        // ll.DeleteAtBeg(); 
+        // ll.show();
+        // ll.printRecRev();
+        Node newHead = ll.RecRev();
+        ll.showWithHead(newHead);
+
 
         // System.err.println(ll.sumList());
     }

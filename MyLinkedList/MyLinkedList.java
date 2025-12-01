@@ -52,6 +52,14 @@ public class MyLinkedList {
         }
     }
 
+    public void showWithHead(Node head){
+        Node temp = head;
+        while (temp != null){
+            System.out.println(temp.data);
+            temp= temp.next;
+        }
+    }
+
     public void deleteLastNode() {
         if (head == null) {
             System.out.println("No Node to Delete");
@@ -148,5 +156,54 @@ public class MyLinkedList {
         Node temp = head.next; 
         // previous head is automatically removed by java garbage Collector which you have to do manually in C++
         head = temp;
+    }
+
+    public void printRec(Node h){
+        // this is the base condition for recursion
+        if (h == null){
+            return ;
+        }
+
+        System.out.println(h.data);
+
+        printRec(h.next);
+    }
+
+    public void printRecRev(Node h){
+        if (h == null){
+            return ;
+        }
+        printRecRev(h.next);
+        System.out.println(h.data);
+    }
+
+    // Make a wrapper function to call this recursive method dont make your head as public
+
+    public void printRec(){
+        printRec(head);
+    }
+
+    public void printRecRev(){
+        printRecRev(head);
+    }
+
+
+    public Node RecRev(Node head){
+        if (head == null || head.next == null){
+            return head;
+        }
+
+        Node rest = RecRev(head.next); // this will preserve the head of the New Reversed Linked List 
+
+        Node next = head.next;
+        next.next = head;
+        head.next = null;
+        return rest;
+
+
+    }
+    public Node RecRev(){
+        Node n = RecRev(head);
+        return n;
     }
 }
