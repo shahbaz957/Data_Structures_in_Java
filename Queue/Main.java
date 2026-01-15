@@ -36,15 +36,24 @@ public class Main{
         // queue.enqueue(55);
         // System.out.println(queue.s_show());
 
-        QueueInStack queue = new QueueInStack();
-        queue.enqueue(23);
-        queue.enqueue(24);
-        queue.enqueue(25);
-        queue.enqueue(26);
-        queue.enqueue(27);
+        // QueueInStack queue = new QueueInStack();
+        // queue.enqueue(23);
+        // queue.enqueue(24);
+        // queue.enqueue(25);
+        // queue.enqueue(26);
+        // queue.enqueue(27);
+        // queue.dequeue();
+        // queue.dequeue();
+        // queue.dequeue();
+        // System.out.println(queue.show());
+
+        PriorityQueue queue = new PriorityQueue(10);
+        queue.enqueue(5);
+        queue.enqueue(1);
+        queue.enqueue(78);
+        queue.enqueue(90);
         queue.dequeue();
-        queue.dequeue();
-        queue.dequeue();
-        System.out.println(queue.show());
+        queue.enqueue(54);
+        System.out.println(queue.s_show());
     }
 }
