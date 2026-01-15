@@ -7,8 +7,6 @@ The goal is to provide a practical reference for common structures used in inter
 
 ## Contents
 
-> Replace or expand this list to match your folder/classes.
-
 - Arrays
 - Linked List (Singly / Doubly) 
 - Stack 
