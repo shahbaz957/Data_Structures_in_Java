@@ -26,6 +26,14 @@ public class Main{
         queue.enqueue(4);
         queue.enqueue(5);
         queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
+        queue.enqueue(25);
+        queue.enqueue(25);
+        queue.enqueue(25);
+        queue.enqueue(25);
+        queue.dequeue();
+        queue.enqueue(55);
         System.out.println(queue.s_show());
     }
 }

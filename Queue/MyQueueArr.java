@@ -2,42 +2,51 @@
 import java.util.Arrays;
 
 public class MyQueueArr {
-    private int[] items;
-    private int front ;
-    private int rear;
-    private int size ;
 
-    public MyQueueArr(int cap){
+    private int[] items;
+    private int front;
+    private int rear;
+    private int size;
+    private int count;
+
+    public MyQueueArr(int cap) {
         this.items = new int[cap]; // allocate the array of this much capacity
         this.front = -1;
-        this.rear = 0 ;
+        this.rear = 0;
         this.size = cap;
+        this.count = 0;
     }
 
-    public void enqueue(int num){
-        if (rear == size){
+    public void enqueue(int num) {
+        if (count == size) {
             System.out.println("Queue is Full");
+            return;
         }
         this.items[rear] = num;
-        rear++;
+        rear = (rear + 1) % size;
+        count++;
     }
-    public int dequeue(){
-        if (front == rear-1){
+
+    public int dequeue() {
+        if (this.count == 0) {
             System.out.println("No more Element to Dequeue");
+            return -1;
         }
-        int num = this.items[++front];
-        this.items[front] = 0 ;
+        front = (front + 1) % size;
+        int num = this.items[front];
+        this.items[front] = 0;
+        count--;
         return num;
     }
 
-    public void show(){
-        for (int i= 0 ; i < size ;i++){
+    public void show() {
+        for (int i = 0; i < size; i++) {
             System.out.println(items[i]);
         }
     }
-    public String s_show(){
+
+    public String s_show() {
         return Arrays.toString(items);
     }
 
 }
- 
