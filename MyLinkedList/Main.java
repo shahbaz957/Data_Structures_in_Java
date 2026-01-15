@@ -21,8 +21,11 @@ public class Main {
         // ll.DeleteAtBeg(); 
         // ll.show();
         // ll.printRecRev();
-        Node newHead = ll.RecRev();
-        ll.showWithHead(newHead);
+//        Node newHead = ll.RecRev();
+//        ll.showWithHead(newHead);
+        // ll.show();
+        ll.printRecRev();   
+
 
 
         // System.err.println(ll.sumList());

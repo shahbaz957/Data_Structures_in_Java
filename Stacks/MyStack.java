@@ -33,8 +33,6 @@ public class MyStack {
             System.out.println("Stack is Empty");
             return -1;
         }
-        int idx= this.top;
-        top--;
-        return this.items[idx-1];
+        return this.items[this.top--];
     }
 }

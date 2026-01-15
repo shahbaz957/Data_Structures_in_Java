@@ -1,0 +1,43 @@
+
+import java.util.Arrays;
+
+public class MyQueueArr {
+    private int[] items;
+    private int front ;
+    private int rear;
+    private int size ;
+
+    public MyQueueArr(int cap){
+        this.items = new int[cap]; // allocate the array of this much capacity
+        this.front = -1;
+        this.rear = 0 ;
+        this.size = cap;
+    }
+
+    public void enqueue(int num){
+        if (rear == size){
+            System.out.println("Queue is Full");
+        }
+        this.items[rear] = num;
+        rear++;
+    }
+    public int dequeue(){
+        if (front == rear-1){
+            System.out.println("No more Element to Dequeue");
+        }
+        int num = this.items[++front];
+        this.items[front] = 0 ;
+        return num;
+    }
+
+    public void show(){
+        for (int i= 0 ; i < size ;i++){
+            System.out.println(items[i]);
+        }
+    }
+    public String s_show(){
+        return Arrays.toString(items);
+    }
+
+}
+ 

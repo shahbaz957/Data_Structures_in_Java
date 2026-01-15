@@ -169,13 +169,13 @@ public class MyLinkedList {
         printRec(h.next);
     }
 
-    public void printRecRev(Node h){
-        if (h == null){
-            return ;
-        }
-        printRecRev(h.next);
-        System.out.println(h.data);
-    }
+    // public void printRecRev(Node h){
+    //     if (h == null){
+    //         return ;
+    //     }
+    //     printRecRev(h.next);
+    //     System.out.println(h.data);
+    // }
 
     // Make a wrapper function to call this recursive method dont make your head as public
 
@@ -205,5 +205,12 @@ public class MyLinkedList {
     public Node RecRev(){
         Node n = RecRev(head);
         return n;
+    }
+    public void printRecRev(Node h){
+        if (h == null){
+            return ;
+        }
+        printRecRev(h.next);
+        System.out.println(h.data);
     }
 }
