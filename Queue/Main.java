@@ -19,21 +19,32 @@ public class Main{
         // q.enqueue(10);
         // q.dequeue();
         // q.show();
-        MyQueueArr queue = new MyQueueArr(5);
-        queue.enqueue(1);
-        queue.enqueue(2);
-        queue.enqueue(3);
-        queue.enqueue(4);
-        queue.enqueue(5);
+        // MyQueueArr queue = new MyQueueArr(5);
+        // queue.enqueue(1);
+        // queue.enqueue(2);
+        // queue.enqueue(3);
+        // queue.enqueue(4);
+        // queue.enqueue(5);
+        // queue.dequeue();
+        // queue.dequeue();
+        // queue.dequeue();
+        // queue.enqueue(25);
+        // queue.enqueue(25);
+        // queue.enqueue(25);
+        // queue.enqueue(25);
+        // queue.dequeue();
+        // queue.enqueue(55);
+        // System.out.println(queue.s_show());
+
+        QueueInStack queue = new QueueInStack();
+        queue.enqueue(23);
+        queue.enqueue(24);
+        queue.enqueue(25);
+        queue.enqueue(26);
+        queue.enqueue(27);
         queue.dequeue();
         queue.dequeue();
         queue.dequeue();
-        queue.enqueue(25);
-        queue.enqueue(25);
-        queue.enqueue(25);
-        queue.enqueue(25);
-        queue.dequeue();
-        queue.enqueue(55);
-        System.out.println(queue.s_show());
+        System.out.println(queue.show());
     }
 }
