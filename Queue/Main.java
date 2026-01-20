@@ -54,6 +54,8 @@ public class Main{
         queue.enqueue(90);
         queue.dequeue();
         queue.enqueue(54);
+        queue.dequeue();
         System.out.println(queue.s_show());
+        // so the priority queue is sth like array storing the element in asc order but it has different implementation depending upon the task that is implemented using that structure
     }
 }
