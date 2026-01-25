@@ -12,8 +12,13 @@ public class Main {
         // System.out.println(map);
         MyHashMap map = new MyHashMap(5);
         map.put(1 , "Shahbaz");
+        map.put(3 , "Mirza");
         map.put(2 , "Hamza");
         map.put(6 , "Ali");
+        map.put(6 , "Checkrepublic");
         System.out.println(map.toString());
+        map.remove(3);
+        System.out.println(map.toString());
+        System.out.println(map.get(6));
     }
 }
